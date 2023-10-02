@@ -44,7 +44,12 @@ def Main():
          a = MainExe()
         # text = MicExecution()
         # Speak(text)
-        
-if __name__ == "__main__":
+    
+def main():
     Tester()
+    from Body.Speak import Speak
+    Speak("Hello")
     Main()
+    
+if __name__ == "__main__":
+    main()
