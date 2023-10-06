@@ -23,9 +23,9 @@ def MainExe():
         if "hello" in query.lower():
             Speak("Hi Sir! I am Jarvis!")
             return True
-        elif("bye" in query.lower() or "close yourself" in query.lower() or "shut down" in query.lower() or "shutdown" in query.lower()):
+        elif("bye" in query.lower() or "close yourself" in query.lower() or "shut down" in query.lower() or "shutdown" in query.lower() or "turn yourself off" in query.lower()):
             Speak("Bye Bye Sir!")
-            break
+            return False
         elif "go to sleep" in query.lower():
             Speak("Sleep Mode Activated...")
             main()
@@ -38,5 +38,3 @@ def MainExe():
                 if f"Open {site[0]}".lower() in query.lower():
                     Speak(f"Opening {site[0]} Sir..")
                     webbrowser.open(site[1])
-            
-MainExe()
