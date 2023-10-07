@@ -1,6 +1,7 @@
 # Open AI
 # API Key
 
+
 fileopen = open("Data//Api.txt","r")
 API = fileopen.read()
 fileopen.close()
@@ -38,6 +39,11 @@ def ReplyBrain(question, chat_log = None):
     FileLog.close()
     return answer
     
-reply = ReplyBrain("Hello! How Are You?")
-print(reply)
+if __name__ == '__main__':
+    
+    while True:
+        answer = ReplyBrain(input())
+        print(f"Jarvis : {answer}")
+        print("")
+    
     

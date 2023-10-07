@@ -1,6 +1,7 @@
 from Body.Listen import MicExecution
 from Body.Speak import Speak
 from main import main
+from Brain.AIBrain import ReplyBrain
 import webbrowser
 
 def MainExe():
@@ -21,20 +22,37 @@ def MainExe():
                  ["Physics Wala", "https://www.pw.live/study/auth"]]
         
         if "hello" in query.lower():
+            print("")
+            print("Jarvis : Hi Sir! I am Jarvis!")
+            print("")
             Speak("Hi Sir! I am Jarvis!")
             return True
         elif("bye" in query.lower() or "close yourself" in query.lower() or "shut down" in query.lower() or "shutdown" in query.lower() or "turn yourself off" in query.lower()):
+            print("")
+            print("Jarvis : Bye Bye Sir...")
+            print("")
             Speak("Bye Bye Sir!")
             return False
         elif "go to sleep" in query.lower():
+            print("")
+            print("Jarvis : Sleep Mode Activated..")
+            print("")
             Speak("Sleep Mode Activated...")
             main()
             return True
         elif "how are you" in query.lower():
-            Speak("I am Well Sir!")
+            print("")
+            print("Jarvis : I am well sir! What about You?")
+            print("")
+            Speak("I am Well Sir! What about You?")
             return True
-        else:
+        elif "open" in query.lower():
             for site in sites:
                 if f"Open {site[0]}".lower() in query.lower():
-                    Speak(f"Opening {site[0]} Sir..")
+                    print(f"Jarvis : Opening {site[0]} Sir")
+                    Speak(f"Opening {site[0]} Sir")
                     webbrowser.open(site[1])
+        else:
+            answer = ReplyBrain(query)
+            print(f"Jarvis : {answer}")
+            Speak(answer)
