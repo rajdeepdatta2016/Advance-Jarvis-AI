@@ -33,7 +33,7 @@ def ReplyBrain(question, chat_log = None):
         presence_penalty = 0)
     answer = response.choices[0].text.strip()
     chat_log_template_update = chat_log_template + f"\nYou : {question} \nJarvis : {answer}"
-    FileLog = open("","w")
+    FileLog = open("Data/ChatLog.txt","w")
     FileLog.write(chat_log_template_update)
     FileLog.close()
     return answer
