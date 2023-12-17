@@ -11,13 +11,15 @@ def Listen():
     
     try:
         print("Recognizing...")
+        print()
         query = r.recognize_google(audio, language='en')
         
     except:
         return ""
     
     query = str(query).lower()
-    print(query)
+    print(f"You : {query}")
+    print()
     return query
 
 def WakeUpDetected():
@@ -36,6 +38,8 @@ def Main():
     
     from Body.Speak import Speak
     
+    print()
+    print("Jarvis : Welcome Sir")
     Speak("Welcome Sir")
     a=True
     # from Body.Listen import MicExecution
@@ -46,9 +50,15 @@ def Main():
         # Speak(text)
     
 def main():
+    print()
+    print()
+    print("********** Welcome to Jarvis Assistant **********")
+    print()
+    print()
     Tester()
     from Body.Speak import Speak
     Speak("Hello")
+    print()
     Main()
     
 if __name__ == "__main__":
